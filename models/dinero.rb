@@ -7,7 +7,7 @@ class Dinero < ActiveRecord::Base
                       on: :create
 
   property :cantidad, as: :integer
-  property :moneda, as: :string, default: 'ARS'
+  property :moneda, as: :string, default: 'HS'
   property :responsable, index: true
   property :comentario, as: :text
   property :codigo, as: :string

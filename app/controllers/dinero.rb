@@ -64,13 +64,16 @@ Dineros::App.controllers :dinero do
 
   post :transferir  do
     cantidad = (params[:dinero][:cantidad].to_f * 100).to_i
-    if cantidad > 0
+    # fija la moneda en HS, para el banco de tiempo
+    #moneda = params[:dinero][:moneda]
+    moneda = 'HS'
+if cantidad > 0
       @dinero_entrega = Dinero.new
   # TODO esto podría ir en la validación del modelo...
       # numero de 2 decimales, se eliminan los decimales sobrantes
       # no se redondea
       @dinero_entrega.cantidad = cantidad * -1
-      @dinero_entrega.moneda = params[:dinero][:moneda]
+      @dinero_entrega.moneda = moneda
       @dinero_entrega.responsable = params[:dinero][:responsable_entrega]
 
       @dinero_recibe = Dinero.new
@@ -78,7 +81,7 @@ Dineros::App.controllers :dinero do
       # numero de 2 decimales, se eliminan los decimales sobrantes
       # no se redondea
       @dinero_recibe.cantidad = cantidad
-      @dinero_recibe.moneda = params[:dinero][:moneda]
+      @dinero_recibe.moneda = moneda
       @dinero_recibe.responsable = params[:dinero][:responsable_recibe]
 
       @dinero_entrega.comentario = @dinero_entrega.nombre.concat(' >> ').concat(@dinero_recibe.nombre).concat(': ').concat(params[:dinero][:comentario])

@@ -27,14 +27,6 @@
       Cantidad transferida (ej: 120.25)
 
   .form-group
-    =f.text_field :moneda,
-                  placeholder: 'HS u otra moneda',
-                  class: 'form-control',
-                  value: params[:moneda]
-    %span.help-inline
-      (HS: horas, JORNADA: jornada de madre activa, COCINA: turno de cocina)
-
-  .form-group
     =f.text_area :comentario,
                  placeholder: 'Por que motivo se realizó la transferencia',
                  class: 'form-control',
