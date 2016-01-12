@@ -1,18 +1,7 @@
 -# encoding: utf-8
 .jumbotron
   .row
-    .col-md-8
-      %h1 Pescatemps
-
-    .col-md-4
-      - if @balances_resumen.size == 1
-        %h2= @balances_resumen.first.dinero.format
-      - else
-        %h2 Tenemos
-        %ul.list-inline
-          - @balances_resumen.each do |total|
-            - next if total.cantidad == 0
-            %li= total.dinero.format
+    %h1 Pescatemps
 
 .tabbable
   %ul.nav.nav-tabs
