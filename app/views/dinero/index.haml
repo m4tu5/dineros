@@ -1,15 +1,10 @@
 -# encoding: utf-8
 .jumbotron
   .row
-    .col-md-4
-      - if @total > 0
-        %h1 Ea!
-      - elsif @total < 0
-        %h1 Estamos cagadas!
-      - else
-        %h1 No hay un choto
+    .col-md-8
+      %h1 Pescatemps
 
-    .col-md-6
+    .col-md-4
       - if @balances_resumen.size == 1
         %h2= @balances_resumen.first.dinero.format
       - else

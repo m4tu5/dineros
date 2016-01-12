@@ -1,26 +1,26 @@
 -# encoding: utf-8
-%h2 Transferencia entre piratas
+%h2 Transferencia entre pescadors
 
 -form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-6' do |f|
   .form-group
     =f.email_field :responsable_entrega,
-                   placeholder: 'Pirata que desembolsó dinero',
+                   placeholder: 'Pescador que aportó el tiempo',
                    class: 'form-control',
                    value: params[:responsable_entrega]
     %span.help-inline
-      Dirección de correo electrónico de la pirata que desembolsó el dinero
+      Nombre del pescador que aportó el tiempo
 
   .form-group
     =f.email_field :responsable_recibe,
-                   placeholder: 'Pirata que recibió el dinero',
+                   placeholder: 'Pescador que recibió el tiempo',
                    class: 'form-control',
                    value: params[:responsable_recibe]
     %span.help-inline
-      Dirección de correo electrónico de la pirata que recibió el dinero
+      Nombre del pescador que recibió el tiempo
 
   .form-group
     =f.text_field :cantidad,
-                  placeholder: 'Cuanto dinero cambió de manos',
+                  placeholder: 'Cuanto tiempo cambió de manos',
                   class: 'form-control',
                   value: params[:cantidad]
     %span.help-inline
@@ -28,11 +28,11 @@
 
   .form-group
     =f.text_field :moneda,
-                  placeholder: 'Doblones u otra moneda',
+                  placeholder: 'HS u otra moneda',
                   class: 'form-control',
                   value: params[:moneda]
     %span.help-inline
-      (ARS:pesos argentinos, FC:FairCoin, BT:BitCoins, etc)
+      (HS: horas, JORNADA: jornada de madre activa, COCINA: turno de cocina)
 
   .form-group
     =f.text_area :comentario,
