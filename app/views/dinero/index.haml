@@ -21,22 +21,13 @@
     %li{ role: 'presentation' }
       = link_to 'Movimientos', '#movimientos', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'movimientos'}
     %li{ role: 'presentation' }
-      = link_to 'Ingreso', '#ingreso', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'ingreso'}
-    %li{ role: 'presentation' }
-      = link_to 'Egreso', '#egreso', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'egreso'}
-    %li{ role: 'presentation' }
       = link_to 'Transferencia', '#transferencia', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'transferencia'}
-
 
   .tab-content
     #balance.tab-pane.active{ role: 'tabpanel' }
       = partial 'dinero/balance'
     #movimientos.tab-pane{ role: 'tabpanel' }
       = partial 'dinero/movimientos'
-    #ingreso.tab-pane{ role: 'tabpanel' }
-      = partial 'dinero/ingreso'
-    #egreso.tab-pane{ role: 'tabpanel' }
-      = partial 'dinero/egreso'
     #transferencia.tab-pane{ role: 'tabpanel' }
       = partial 'dinero/transferencia'
 
