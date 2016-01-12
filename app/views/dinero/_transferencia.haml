@@ -3,7 +3,7 @@
 
 -form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-6' do |f|
   .form-group
-    =f.email_field :responsable_entrega,
+    =f.text_field :responsable_entrega,
                    placeholder: 'Pescador que aportó el tiempo',
                    class: 'form-control',
                    value: params[:responsable_entrega]
@@ -11,7 +11,7 @@
       Nombre del pescador que aportó el tiempo
 
   .form-group
-    =f.email_field :responsable_recibe,
+    =f.text_field :responsable_recibe,
                    placeholder: 'Pescador que recibió el tiempo',
                    class: 'form-control',
                    value: params[:responsable_recibe]
