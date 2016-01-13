@@ -8,17 +8,17 @@
     %li.active{ role: 'presentation' }
       = link_to 'Balance', '#balance', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'balance'}
     %li{ role: 'presentation' }
-      = link_to 'Movimientos', '#movimientos', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'movimientos'}
-    %li{ role: 'presentation' }
       = link_to 'Transferencia', '#transferencia', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'transferencia'}
+    %li{ role: 'presentation' }
+      = link_to 'Historial', '#movimientos', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'movimientos'}
 
   .tab-content
     #balance.tab-pane.active{ role: 'tabpanel' }
       = partial 'dinero/balance'
-    #movimientos.tab-pane{ role: 'tabpanel' }
-      = partial 'dinero/movimientos'
     #transferencia.tab-pane{ role: 'tabpanel' }
       = partial 'dinero/transferencia'
+    #movimientos.tab-pane{ role: 'tabpanel' }
+      = partial 'dinero/movimientos'
 
 %script{'src' => 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'}
 %script{'src' => 'javascripts/bootstrap.min.js'}
