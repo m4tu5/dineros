@@ -1,7 +1,7 @@
 -# encoding: utf-8
 
 -form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-4' do |f|
-  %h2 Transferencia entre pescadors
+  %h2 Transferir tiempo
 
   .form-group
     =f.text_field :responsable_entrega,
@@ -45,9 +45,10 @@
     %li la pescadora que lo recibió
     %li la cantidad de tiempo entregado
 
-  Nombre validos (en minusculas): iker, camila,
-  maia, lea, bernat, marta, galla, sara, marc,
-  josephine
+  %strong Nombre validos (en minusculas): iker, camila,
+  %strong maia, lea, bernat, marta, galla, sara, marc,
+  %strong josephine
+
   %br
   %br
   Opcionalmente, se puede ingresar una descripción
