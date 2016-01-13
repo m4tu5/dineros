@@ -67,7 +67,7 @@ Dineros::App.controllers :dinero do
     # fija la moneda en HS, para el banco de tiempo
     #moneda = params[:dinero][:moneda]
     moneda = 'HS'
-if cantidad > 0
+    if cantidad > 0
       @dinero_entrega = Dinero.new
   # TODO esto podría ir en la validación del modelo...
       # numero de 2 decimales, se eliminan los decimales sobrantes
