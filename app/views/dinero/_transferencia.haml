@@ -1,22 +1,23 @@
 -# encoding: utf-8
-%h2 Transferencia entre pescadors
 
--form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-6' do |f|
+-form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-4' do |f|
+  %h2 Transferencia entre pescadors
+
   .form-group
     =f.text_field :responsable_entrega,
-                   placeholder: 'Pescador que aportó el tiempo',
+                   placeholder: 'Pescadora que entregó el tiempo',
                    class: 'form-control',
                    value: params[:responsable_entrega]
     %span.help-inline
-      Nombre del pescador que aportó el tiempo
+      Nombre de la pescadora que entregó el tiempo
 
   .form-group
     =f.text_field :responsable_recibe,
-                   placeholder: 'Pescador que recibió el tiempo',
+                   placeholder: 'Pescadora que recibió el tiempo',
                    class: 'form-control',
                    value: params[:responsable_recibe]
     %span.help-inline
-      Nombre del pescador que recibió el tiempo
+      Nombre de la pescadora que recibió el tiempo
 
   .form-group
     =f.text_field :cantidad,
@@ -34,3 +35,36 @@
 
   .form-group
     =f.submit :transferir, class: 'btn btn-primary'
+
+.col-md-6.col-md-offset-1
+  %h2 Como usar este formulario
+
+  Son campos mandatorios
+  %ul
+    %li la pescadora que entregó su tiempo
+    %li la pescadora que lo recibió
+    %li la cantidad de tiempo entregado
+
+  Nombre validos (en minusculas): iker, camila,
+  maia, lea, bernat, marta, galla, sara, marc,
+  josephine
+  %br
+  %br
+  Opcionalmente, se puede ingresar una descripción
+  o motivo para la transferencia
+  %br
+  %br
+  La cantidad de tiempo entregado se expresa
+  en horas (HS).
+  %br
+  El valor acepta decimales, con lo que
+  %ul
+    %li 15 minutos = 0.25 HS
+    %li 30 minutos = 0.50 HS
+    %li 45 minutos = 0.75 HS
+
+  %br
+  Cuando se entregue tiempo a mas de una pescadora
+  a la vez (canguro de 2 o + pescadoras) se debe
+  dividir el tiempo entre todas las pescadores que
+  lo reciban en partes iguales.
