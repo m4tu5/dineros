@@ -95,10 +95,10 @@ Dineros::App.controllers :dinero do
           redirect '/'
         else
           @dinero_entrega.delete
-          'Hubo un error'
+          'Hubo un error. Vuelva atrás, revise los datos ingresados e intentelo nuevamente.'
         end
       else
-        'Hubo un error'
+        'Hubo un error. Vuelva atrás, revise los datos ingresados e intentelo nuevamente'
       end
     else
       'La cantidad debe ser un número positivo'
