@@ -72,7 +72,7 @@ Dineros::App.controllers :dinero do
   # TODO esto podría ir en la validación del modelo...
       # numero de 2 decimales, se eliminan los decimales sobrantes
       # no se redondea
-      @dinero_entrega.cantidad = cantidad * -1
+      @dinero_entrega.cantidad = cantidad
       @dinero_entrega.moneda = moneda
       @dinero_entrega.responsable = params[:dinero][:responsable_entrega]
 
@@ -80,7 +80,7 @@ Dineros::App.controllers :dinero do
   # TODO esto podría ir en la validación del modelo...
       # numero de 2 decimales, se eliminan los decimales sobrantes
       # no se redondea
-      @dinero_recibe.cantidad = cantidad
+      @dinero_recibe.cantidad = cantidad * -1
       @dinero_recibe.moneda = moneda
       @dinero_recibe.responsable = params[:dinero][:responsable_recibe]
 
