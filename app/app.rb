@@ -10,5 +10,10 @@ module Dineros
 
     set :delivery_method, :sendmail
     set :mailer_defaults, from: "Dineros <dineros@#{ENV['FQDN']}>"
+
+    # soluciona problemas con valudacion de token en chromium
+    # https://github.com/padrino/padrino-framework/issues/1251
+    set :protect_from_csrf, false
+
   end
 end
