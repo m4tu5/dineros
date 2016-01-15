@@ -2,8 +2,7 @@
 %p
   Este es un recibo por un intercambio de tiempo registrado
   en
-  %a{href: 'https://' + ENV['FQDN'] }
-    Pescatemps
+  %a{href: 'https://' + ENV['FQDN'] } Pescatemps
   %br
   %br
   Pescador:
@@ -15,4 +14,5 @@
 %blockquote= dinero.comentario
 %p
   Si desconoces el intercambio de tiempo, usa este link de
-  desconfirmacion: %a{href: url_para_desconfirmar } Desconfirmar
+  desconfirmacion:
+  %a{href: url_para_desconfirmar } Desconfirmar
