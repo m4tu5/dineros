@@ -9,7 +9,7 @@ module Dineros
     enable :sessions
 
     set :delivery_method, :sendmail
-    set :mailer_defaults, from: "Dineros <dineros@#{ENV['FQDN']}>"
+    set :mailer_defaults, from: "Pescatemps <#{ENV['EMAIL_ADMIN']}>"
 
     # soluciona problemas con valudacion de token en chromium
     # https://github.com/padrino/padrino-framework/issues/1251
