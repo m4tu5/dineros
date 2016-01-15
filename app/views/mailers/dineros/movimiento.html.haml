@@ -2,7 +2,8 @@
 %p
   Este es un recibo por un intercambio de tiempo registrado
   en
-  %a{href: = ENV['FQDN'] } Pescatemps
+  %a{href: 'https://' + ENV['FQDN'] }
+    Pescatemps
   %br
   Pescador:
   = dinero.responsable
