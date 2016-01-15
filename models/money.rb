@@ -12,13 +12,19 @@ class Money
   end
 
   def self.thousands_separator(cents, sep = '.', dec_sep = ',')
-    int = (cents / 100).to_s.reverse.gsub(/(\d{3})(?=\d)/, "\\1#{sep}").reverse
-    dec = (cents / BigDecimal(100)) - (cents / 100)
-
+    int = (cents.abs.to_f / 100).to_i
+    dec = ((cents.abs / BigDecimal(100)) - int)
     if dec == 0.0
-      "#{int}"
+      formato = "#{int}"
     else
-      "#{int}#{dec_sep}#{(dec * 100).to_i}"
+      formato = "#{int}#{dec_sep}#{(dec * 100).to_i}"
     end
+
+    if cents.to_s.chr == "-"
+      formato.prepend("-")
+    else
+      formato
+    end
+
   end
 end
