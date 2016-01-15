@@ -88,16 +88,14 @@ Dineros::App.controllers :dinero do
       @dinero_recibe.moneda = moneda
       @dinero_recibe.responsable = params[:dinero][:responsable_recibe]
 
-      @dinero_entrega.comentario = @dinero_entrega.nombre.concat(' >> ').concat(@dinero_recibe.nombre).concat(': ').concat(params[:dinero][:comentario])
+      @dinero_entrega.comentario = @dinero_entrega.nombre.concat(' → ').concat(@dinero_recibe.nombre).concat(': ').concat(params[:dinero][:comentario])
       @dinero_recibe.comentario = @dinero_entrega.comentario
 
       # valida que la persona que transfiere tenga lo que va a transferir
       if @dinero_entrega.save
         if @dinero_recibe.save
           deliver :dineros, :movimiento, @dinero_entrega, url_para_desconfirmar(@dinero_entrega)
-
           deliver :dineros, :movimiento, @dinero_recibe, url_para_desconfirmar(@dinero_recibe)
-
           redirect '/'
         else
           @dinero_entrega.delete
