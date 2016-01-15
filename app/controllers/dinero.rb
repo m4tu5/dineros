@@ -52,7 +52,8 @@ Dineros::App.controllers :dinero do
 
     if cantidad > 0
       if @dinero.save
-        deliver :dineros, :movimiento, @dinero
+        deliver :dineros, :movimiento, @dinero, url_para_desconfirmar(@dinero)
+
         redirect '/'
       else
         'Hubo un error'
@@ -90,8 +91,10 @@ Dineros::App.controllers :dinero do
       # valida que la persona que transfiere tenga lo que va a transferir
       if @dinero_entrega.save
         if @dinero_recibe.save
-          deliver :dineros, :movimiento, @dinero_entrega
-          deliver :dineros, :movimiento, @dinero_recibe
+          deliver :dineros, :movimiento, @dinero_entrega, url_para_desconfirmar(@dinero_entrega)
+
+          deliver :dineros, :movimiento, @dinero_recibe, url_para_desconfirmar(@dinero_recibe)
+
           redirect '/'
         else
           @dinero_entrega.delete
