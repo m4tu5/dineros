@@ -22,6 +22,9 @@ Configuración
   # opcional si queremos tener la llave de dineros separada de la
   # nuestra o de otras aplicaciones
   GNUPGHOME=./gnupg
+  # opcional la dirreccion de correo del administrador de la plataforma
+  # para recibir los avisos de movimientos borrados
+  EMAIL_ADMIN=admin@midominio.com
 ```
 
 * Instalar las gemas

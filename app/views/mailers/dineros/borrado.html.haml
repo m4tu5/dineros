@@ -1,0 +1,25 @@
+%p Hola
+%p
+  Este es un aviso de que se ha borrado un movimiento
+  en
+  %a{href: 'https://' + ENV['FQDN'] }
+    Pescatemps
+  %br
+  %br
+  Pescador:
+  = dinero.responsable
+  %br
+  Tiempo:
+  = dinero.dinero.format
+  %br
+  Codigo:
+  = dinero.codigo
+  %br
+  Timestamp:
+  = dinero.created_at
+  %br
+  Comentario:
+  = dinero.comentario
+%p
+  Por favor verificar si el movimiento eliminado tiene movimientos
+  asociados, y de ser así, eliminarlos manualmente

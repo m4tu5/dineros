@@ -36,6 +36,7 @@ Dineros::App.controllers :dinero do
     if params[:dinero][:codigo]
       @dinero = Dinero.find_by(codigo: params[:dinero][:codigo])
       @dinero.destroy!
+      deliver :dineros, :borrado, @dinero
     end
 
     redirect '/'

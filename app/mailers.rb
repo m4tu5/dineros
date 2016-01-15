@@ -7,4 +7,13 @@ Dineros::App.mailer :dineros do
     render 'dineros/movimiento'
     gpg sign: true, password: ENV['GPG_PASSWORD']
   end
+
+  email :borrado do |dinero|
+    to ENV['EMAIL_ADMIN']
+    subject 'Movimiento eliminado'
+    locals dinero: dinero
+    provides :html
+    render 'dineros/borrado'
+    gpg sign: true, password: ENV['GPG_PASSWORD']
+  end
 end
