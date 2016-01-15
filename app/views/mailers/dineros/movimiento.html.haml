@@ -13,6 +13,5 @@
   %br
 %blockquote= dinero.comentario
 %p
-  Si desconoces el intercambio de tiempo, usa este link de
-  desconfirmacion:
-  %a{href: url_para_desconfirmar } Desconfirmar
+  Si desconoces el intercambio de tiempo, reenvie este correo a
+  = ENV['EMAIL_ADMIN']

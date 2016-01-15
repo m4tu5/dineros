@@ -35,8 +35,10 @@ Dineros::App.controllers :dinero do
   post :desconfirmar do
     if params[:dinero][:codigo]
       @dinero = Dinero.find_by(codigo: params[:dinero][:codigo])
+    # TODO arreglar el envio de un mensaje cuando se borra un movimiento
+    # cuando este funcione bien, enviar links de borrado a usuarios
+    # deliver :dineros, :borrado, @dinero
       @dinero.destroy!
-      deliver :dineros, :borrado, @dinero
     end
 
     redirect '/'
