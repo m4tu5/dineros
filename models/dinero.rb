@@ -3,7 +3,7 @@ require 'securerandom'
 class Dinero < ActiveRecord::Base
   timestamps
   validates_format_of :responsable,
-                      with: /(IKER|CAMILA|MAIA|LEA|BERNAT|MARTA|GALA|SARA|MARC|JOSEPHINE)/,
+                      with: /(Iker|Camila|Maia|Lea|Bernat|Marta|Gala|Sara|Marc|Josephine)/,
                       on: :create
 
   property :cantidad, as: :integer
@@ -27,7 +27,7 @@ class Dinero < ActiveRecord::Base
   end
 
   def responsable=(tipo)
-    write_attribute(:responsable, tipo.upcase)
+    write_attribute(:responsable, tipo.capitalize)
   end
 
   private
