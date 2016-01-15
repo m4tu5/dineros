@@ -1,9 +1,15 @@
 %p Hola
 %p
-  Este es un recibo por los dineros que agregaste en
-  = ENV['FQDN']
-  por
+  Este es un recibo por un intercambio de tiempo registrado
+  en
+  %a{href: = ENV['FQDN'] } Pescatemps
+  %br
+  Pescador:
+  = dinero.responsable
+  %br
+  Tiempo:
   = dinero.dinero.format
+  %br
 %blockquote= dinero.comentario
 %p
   Si no tenes idea de que se trata esto, use este link de
