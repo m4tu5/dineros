@@ -3,7 +3,6 @@
 %table.table.table-condensed.table-striped
   %thead
     %tr
-      %th Moneda
       %th Pescador
       %th Ingreso
       %th Egreso
@@ -11,17 +10,14 @@
   %tfoot
     - @balances_resumen.each do |fila|
       %tr
-        %th{colspan: 2}= fila.moneda
+        %th TOTAL
         %th= Money.thousands_separator fila.ingreso
         %th= Money.thousands_separator fila.egreso
         %th= Money.thousands_separator fila.cantidad
   %tbody
     - @balances.each do |fila|
       %tr
-        %td= fila.moneda
-        %td
-          %img{ gravatar_attrs(fila.responsable, size: 25) }
-          = fila.nombre
+        %td= fila.nombre
         %td= Money.thousands_separator fila.ingreso
         %td= Money.thousands_separator fila.egreso
         %td= Money.thousands_separator fila.cantidad
