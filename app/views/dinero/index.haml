@@ -3,7 +3,7 @@
   %h1 Pescatemps
 
 .tabbable
-  %ul.nav.nav-tabs
+  %ul#pestanias.nav.nav-tabs
     %li.active{ role: 'presentation' }
       = link_to 'Balance', '#balance', {'data-toggle'=>'tab', 'role' => 'tab', 'aria-controls' => 'balance'}
     %li{ role: 'presentation' }
@@ -21,3 +21,18 @@
 
 %script{'src' => 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'}
 %script{'src' => 'javascripts/bootstrap.min.js'}
+:javascript
+  $('#pestanias a').click(function(e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+
+  // store the currently selected tab in the hash value
+  $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+    var id = $(e.target).attr("href").substr(1);
+    window.location.hash = id;
+  });
+
+  // on load of the page: switch to the currently selected tab
+  var hash = window.location.hash;
+  $('#pestanias a[href="' + hash + '"]').tab('show');
