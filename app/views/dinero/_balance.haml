@@ -15,7 +15,7 @@
         %th= Money.thousands_separator fila.egreso
         %th= Money.thousands_separator fila.cantidad
   %tbody
-    - @balances.each do |fila|
+    - @balances.where.not(responsable: ['Camila', 'Josephine']).each do |fila|
       %tr
         %td= fila.nombre
         %td= Money.thousands_separator fila.ingreso
