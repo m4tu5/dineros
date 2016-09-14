@@ -1,5 +1,4 @@
 -# encoding: utf-8
-= paginate @dineros
 %h2 Histórico de movimientos
 
 %table.table.table-condensed.table-striped
@@ -13,3 +12,4 @@
   %tbody
     -@dineros.each do |dinero|
       = partial 'dinero/ficha', locals: { dinero: dinero }
+= paginate @dineros
