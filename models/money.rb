@@ -15,7 +15,9 @@ class Money
     int = (cents.abs.to_f / 100).to_i
     dec = ((cents.abs / BigDecimal(100)) - int)
     if dec == 0.0
-      formato = "#{int}"
+      formato = "#{int}#{dec_sep}00"
+    elsif dec < 0.10
+      formato = "#{int}#{dec_sep}0#{(dec * 100).to_i}"
     else
       formato = "#{int}#{dec_sep}#{(dec * 100).to_i}"
     end
