@@ -8,12 +8,6 @@
     %li la pescadora que entregó su tiempo
     %li la pescadora que lo recibió
     %li la cantidad de tiempo entregado
-
-  %strong NOMBRES VALIDOS: Iker, Camila,
-  %strong Maia, Lea, Bernat, Marta, Gala, Sara, Marc,
-  %strong Josephine
-
-  %br
   %br
   Opcionalmente, se puede ingresar una descripción
   o motivo para la transferencia
@@ -27,13 +21,11 @@
     %li 15 minutos = 0.25 HS
     %li 30 minutos = 0.50 HS
     %li 45 minutos = 0.75 HS
-
+  %br
   Cuando se entregue tiempo a mas de una pescadora
   a la vez (canguro de 2 o + pescadoras) se debe
   dividir el tiempo entre todas las pescadores que
   lo reciban en partes iguales.
-  %br
-  %br
 
 -form_for :dinero, url(:dinero, :transferir), class: 'form-horizontal col-md-4 col-md-offset-1' do |f|
   %h2 Transferir tiempo
