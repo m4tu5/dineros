@@ -2,6 +2,14 @@
 = paginate @dineros
 %h2 Histórico de movimientos
 
-.row
-  -@dineros.each do |dinero|
-    = partial 'dinero/ficha', locals: { dinero: dinero }
+%table.table.table-condensed.table-striped
+  %thead
+    %tr
+      %th Fecha
+      %th Pescadora
+      %th Tiempo
+      %th Comentario
+      %th id
+  %tbody
+    -@dineros.each do |dinero|
+      = partial 'dinero/ficha', locals: { dinero: dinero }

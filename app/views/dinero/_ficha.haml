@@ -1,19 +1,6 @@
-.media
-  .media-left
-    %a{href: '#'}
-      %img.media-object{ gravatar_attrs(dinero.responsable,
-                                        size: 70,
-                                        title: dinero.nombre,
-                                        secure: request.secure? ) }
-  .media-body
-    .row
-      %h4.col-md-2.col-md-offset-1.media-heading= dinero.dinero.format
-      %blockquote.col-md-4
-        %p= dinero.comentario
-        %footer
-          %cite
-            = dinero.nombre
-            = ', '
-            = dinero.created_at
-            = ', '
-            = dinero.codigo
+%tr
+  %td= dinero.created_at.strftime("%e-%h-%y")
+  %td= dinero.nombre
+  %td= dinero.dinero.format
+  %td= dinero.comentario
+  %td= dinero.codigo
