@@ -67,7 +67,7 @@ Dineros::App.controllers :dinero do
   end
 
   post :transferir  do
-    unless params[:dinero][:cantidad].to_i > 0
+    unless params[:dinero][:cantidad].to_f > 0
       return '<h1>La cantidad debe ser un número positivo</br>Regrese al formulario y corrija el error</h1>'.html_safe
     end
     if params[:dinero][:responsable_entrega] == 'Seleccione pescadora que'
