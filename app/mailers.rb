@@ -1,6 +1,6 @@
 Dineros::App.mailer :dineros do
   email :movimiento do |dinero, url|
-    to dinero.responsable.concat('enmotoneta.com')
+    to dinero.responsable.concat('@enmotoneta.com')
     subject 'Notificación de Pescatemps'
     locals dinero: dinero, url_para_desconfirmar: url
     provides :html
