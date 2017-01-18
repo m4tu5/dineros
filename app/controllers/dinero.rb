@@ -86,7 +86,7 @@ Dineros::App.controllers :dinero do
 
     if params[:dinero][:responsable_recibe] == "Todas (suplencia)"
       receptores = Array['Bernat','Gala','Greta','Iker','Lea','Maia','Marc','Marta','Oli','Sara']
-      cantidad = cantidad / 9
+      cantidad = cantidad / 10
     else
       receptores = Array[params[:dinero][:responsable_recibe]]
     end
