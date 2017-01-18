@@ -3,7 +3,7 @@ require 'securerandom'
 class Dinero < ActiveRecord::Base
   timestamps
   validates_format_of :responsable,
-                      with: /(Bernat|Gala|Greta|Iker|Lea|Maia|Marc|Marta|Sara)/,
+                      with: /(Bernat|Gala|Greta|Iker|Lea|Maia|Marc|Marta|Oli|Sara)/,
                       on: :create
 
   property :cantidad, as: :integer
